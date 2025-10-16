@@ -1,0 +1,10 @@
+simv
+*.vcd
+*.zip
+*.o
+*.log
+.Xil/
+.vivado*/
+.runs/
+.sim/
+.cache/
