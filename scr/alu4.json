@@ -1,0 +1,572 @@
+{
+  "creator": "Yosys 0.9 (git sha1 1979e0b1, i686-w64-mingw32.static-g++ 5.5.0 -Os)",
+  "modules": {
+    "alu4": {
+      "attributes": {
+        "top": 1,
+        "src": "Alu4.v:2"
+      },
+      "ports": {
+        "a": {
+          "direction": "input",
+          "bits": [ 2, 3, 4, 5 ]
+        },
+        "b": {
+          "direction": "input",
+          "bits": [ 6, 7, 8, 9 ]
+        },
+        "op": {
+          "direction": "input",
+          "bits": [ 10, 11, 12 ]
+        },
+        "y": {
+          "direction": "output",
+          "bits": [ 13, 14, 15, 16 ]
+        },
+        "overflow": {
+          "direction": "output",
+          "bits": [ 17 ]
+        },
+        "zero": {
+          "direction": "output",
+          "bits": [ 18 ]
+        }
+      },
+      "cells": {
+        "$add$Alu4.v:10$1": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 4,
+            "Y_WIDTH": 5
+          },
+          "attributes": {
+            "src": "Alu4.v:10"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 2, 3, 4, 5 ],
+            "B": [ 6, 7, 8, 9 ],
+            "Y": [ 19, 20, 21, 22, 23 ]
+          }
+        },
+        "$add$Alu4.v:11$3": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 4,
+            "Y_WIDTH": 5
+          },
+          "attributes": {
+            "src": "Alu4.v:11"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 2, 3, 4, 5 ],
+            "B": [ 24, 25, 26, 27 ],
+            "Y": [ 28, 29, 30, 31, 32 ]
+          }
+        },
+        "$add$Alu4.v:11$4": {
+          "hide_name": 1,
+          "type": "$add",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 5,
+            "B_SIGNED": 0,
+            "B_WIDTH": 1,
+            "Y_WIDTH": 5
+          },
+          "attributes": {
+            "src": "Alu4.v:11"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 28, 29, 30, 31, 32 ],
+            "B": [ "1" ],
+            "Y": [ 33, 34, 35, 36, 37 ]
+          }
+        },
+        "$eq$Alu4.v:46$12": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "Alu4.v:46"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 13, 14, 15, 16 ],
+            "Y": [ 18 ]
+          }
+        },
+        "$mul$Alu4.v:12$5": {
+          "hide_name": 1,
+          "type": "$mul",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 4,
+            "Y_WIDTH": 8
+          },
+          "attributes": {
+            "src": "Alu4.v:12"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 2, 3, 4, 5 ],
+            "B": [ 6, 7, 8, 9 ],
+            "Y": [ 38, 39, 40, 41, 42, 43, 44, 45 ]
+          }
+        },
+        "$not$Alu4.v:11$2": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "Y_WIDTH": 4
+          },
+          "attributes": {
+            "src": "Alu4.v:11"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 6, 7, 8, 9 ],
+            "Y": [ 24, 25, 26, 27 ]
+          }
+        },
+        "$not$Alu4.v:25$8": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "Alu4.v:25"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 37 ],
+            "Y": [ 46 ]
+          }
+        },
+        "$not$Alu4.v:32$11": {
+          "hide_name": 1,
+          "type": "$not",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "Y_WIDTH": 4
+          },
+          "attributes": {
+            "src": "Alu4.v:32"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 47, 48, 49, 50 ],
+            "Y": [ 51, 52, 53, 54 ]
+          }
+        },
+        "$or$Alu4.v:32$10": {
+          "hide_name": 1,
+          "type": "$or",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "B_SIGNED": 0,
+            "B_WIDTH": 4,
+            "Y_WIDTH": 4
+          },
+          "attributes": {
+            "src": "Alu4.v:32"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 2, 3, 4, 5 ],
+            "B": [ 6, 7, 8, 9 ],
+            "Y": [ 47, 48, 49, 50 ]
+          }
+        },
+        "$procmux$14": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": 4,
+            "WIDTH": 1
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "Alu4.v:35|Alu4.v:18"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0" ],
+            "B": [ 5, 55, 46, 23 ],
+            "S": [ 56, 57, 58, 59 ],
+            "Y": [ 17 ]
+          }
+        },
+        "$procmux$15_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 3,
+            "B_SIGNED": 0,
+            "B_WIDTH": 3,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "Alu4.v:35|Alu4.v:18"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 10, 11, 12 ],
+            "B": [ "0", "0", "1" ],
+            "Y": [ 56 ]
+          }
+        },
+        "$procmux$16_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 3,
+            "B_SIGNED": 0,
+            "B_WIDTH": 2,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "Alu4.v:27|Alu4.v:18"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 10, 11, 12 ],
+            "B": [ "0", "1" ],
+            "Y": [ 57 ]
+          }
+        },
+        "$procmux$17_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 3,
+            "B_SIGNED": 0,
+            "B_WIDTH": 1,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "Alu4.v:23|Alu4.v:18"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 10, 11, 12 ],
+            "B": [ "1" ],
+            "Y": [ 58 ]
+          }
+        },
+        "$procmux$18_CMP0": {
+          "hide_name": 1,
+          "type": "$logic_not",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 3,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "Alu4.v:19|Alu4.v:18"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 10, 11, 12 ],
+            "Y": [ 59 ]
+          }
+        },
+        "$procmux$20": {
+          "hide_name": 1,
+          "type": "$pmux",
+          "parameters": {
+            "S_WIDTH": 5,
+            "WIDTH": 4
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "Alu4.v:35|Alu4.v:18"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "S": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ "0", "0", "0", "0" ],
+            "B": [ "0", 2, 3, 4, 51, 52, 53, 54, 38, 39, 40, 41, 33, 34, 35, 36, 19, 20, 21, 22 ],
+            "S": [ 56, 60, 57, 58, 59 ],
+            "Y": [ 13, 14, 15, 16 ]
+          }
+        },
+        "$procmux$22_CMP0": {
+          "hide_name": 1,
+          "type": "$eq",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 3,
+            "B_SIGNED": 0,
+            "B_WIDTH": 2,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "full_case": 1,
+            "src": "Alu4.v:31|Alu4.v:18"
+          },
+          "port_directions": {
+            "A": "input",
+            "B": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 10, 11, 12 ],
+            "B": [ "1", "1" ],
+            "Y": [ 60 ]
+          }
+        },
+        "$reduce_or$Alu4.v:29$9": {
+          "hide_name": 1,
+          "type": "$reduce_or",
+          "parameters": {
+            "A_SIGNED": 0,
+            "A_WIDTH": 4,
+            "Y_WIDTH": 1
+          },
+          "attributes": {
+            "src": "Alu4.v:29"
+          },
+          "port_directions": {
+            "A": "input",
+            "Y": "output"
+          },
+          "connections": {
+            "A": [ 45, 44, 43, 42 ],
+            "Y": [ 55 ]
+          }
+        }
+      },
+      "netnames": {
+        "$add$Alu4.v:11$3_Y": {
+          "hide_name": 1,
+          "bits": [ 28, 29, 30, 31, 32 ],
+          "attributes": {
+            "src": "Alu4.v:11"
+          }
+        },
+        "$not$Alu4.v:11$2_Y": {
+          "hide_name": 1,
+          "bits": [ 24, 25, 26, 27 ],
+          "attributes": {
+            "src": "Alu4.v:11"
+          }
+        },
+        "$not$Alu4.v:25$8_Y": {
+          "hide_name": 1,
+          "bits": [ 46 ],
+          "attributes": {
+            "src": "Alu4.v:25"
+          }
+        },
+        "$not$Alu4.v:32$11_Y": {
+          "hide_name": 1,
+          "bits": [ 51, 52, 53, 54 ],
+          "attributes": {
+            "src": "Alu4.v:32"
+          }
+        },
+        "$or$Alu4.v:32$10_Y": {
+          "hide_name": 1,
+          "bits": [ 47, 48, 49, 50 ],
+          "attributes": {
+            "src": "Alu4.v:32"
+          }
+        },
+        "$procmux$15_CMP": {
+          "hide_name": 1,
+          "bits": [ 56 ],
+          "attributes": {
+          }
+        },
+        "$procmux$16_CMP": {
+          "hide_name": 1,
+          "bits": [ 57 ],
+          "attributes": {
+          }
+        },
+        "$procmux$17_CMP": {
+          "hide_name": 1,
+          "bits": [ 58 ],
+          "attributes": {
+          }
+        },
+        "$procmux$18_CMP": {
+          "hide_name": 1,
+          "bits": [ 59 ],
+          "attributes": {
+          }
+        },
+        "$procmux$22_CMP": {
+          "hide_name": 1,
+          "bits": [ 60 ],
+          "attributes": {
+          }
+        },
+        "$reduce_or$Alu4.v:29$9_Y": {
+          "hide_name": 1,
+          "bits": [ 55 ],
+          "attributes": {
+            "src": "Alu4.v:29"
+          }
+        },
+        "a": {
+          "hide_name": 0,
+          "bits": [ 2, 3, 4, 5 ],
+          "attributes": {
+            "src": "Alu4.v:3"
+          }
+        },
+        "add5": {
+          "hide_name": 0,
+          "bits": [ 19, 20, 21, 22, 23 ],
+          "attributes": {
+            "src": "Alu4.v:10"
+          }
+        },
+        "b": {
+          "hide_name": 0,
+          "bits": [ 6, 7, 8, 9 ],
+          "attributes": {
+            "src": "Alu4.v:4"
+          }
+        },
+        "mul8": {
+          "hide_name": 0,
+          "bits": [ 38, 39, 40, 41, 42, 43, 44, 45 ],
+          "attributes": {
+            "src": "Alu4.v:12"
+          }
+        },
+        "op": {
+          "hide_name": 0,
+          "bits": [ 10, 11, 12 ],
+          "attributes": {
+            "src": "Alu4.v:5"
+          }
+        },
+        "overflow": {
+          "hide_name": 0,
+          "bits": [ 17 ],
+          "attributes": {
+            "src": "Alu4.v:7"
+          }
+        },
+        "shl5a": {
+          "hide_name": 0,
+          "bits": [ "0", 2, 3, 4, 5 ],
+          "attributes": {
+            "src": "Alu4.v:13"
+          }
+        },
+        "sub5": {
+          "hide_name": 0,
+          "bits": [ 33, 34, 35, 36, 37 ],
+          "attributes": {
+            "src": "Alu4.v:11"
+          }
+        },
+        "y": {
+          "hide_name": 0,
+          "bits": [ 13, 14, 15, 16 ],
+          "attributes": {
+            "src": "Alu4.v:6"
+          }
+        },
+        "zero": {
+          "hide_name": 0,
+          "bits": [ 18 ],
+          "attributes": {
+            "src": "Alu4.v:8"
+          }
+        }
+      }
+    }
+  }
+}
